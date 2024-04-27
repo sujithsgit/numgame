@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Number Game </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1> Guess the Number </h1>
+
+    </div>
+   
+    <input type="number" id="first">
+    <button onclick="check()" class="button"> Check </button>
+    <p id="parah"> you are correct/wrong </p>
+    <p id="score"> Score:10 </p>
+    <script>
+        var input = document.getElementById("first")
+        var parah = document.getElementById("parah")
+        var score = document.getElementById("score")
+        var guessnum = Math.ceil(Math.random()*10)
+        var totalscore = 10
+        function check() {
+            if (guessnum == input.value){
+                alert("you won")
+                parah.textContent = "you are correct"
+                totalscore = totalscore+1
+                score.textContent = totalscore
+
+            }else{
+                parah.textContent = "you are wrong"
+                totalscore = totalscore-1
+                score.textContent = totalscore
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
